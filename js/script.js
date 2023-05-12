@@ -1,37 +1,48 @@
 let requiredInput = document.querySelectorAll('.required')
-let requiredBox = document.querySelectorAll('.required-box')
 let submitButton = document.querySelector('button')
-function handleFormSubmit(event) {
-    event.preventDefault()
-}
+let indicators = document.querySelector('.block')
+let allInputs = document.querySelectorAll('input')
 
-submitButton.onclick = ()=>{
-    for (let item of requiredInput){
-        if (item.value.trim() == '') {
-            item.classList.add('red')
-            requiredBox.forEach(elem =>{
-                let a = elem.querySelectorAll('span')
-                for (let i of a) {
-                i.classList.add('red-color')
-                if(i.className == 'need-fill red-color')
-                    i.innerHTML = 'Please enter your email adress'
-                    submitButton.style.backgroundColor = '#EE0004'
-
-                }
-            })
-        } else if (item.value.trim() !== ''){
-            item.classList.remove('red')
-            requiredBox.forEach(elem =>{
-                let a = elem.querySelectorAll('span')
-                for (let i of a) {
-                    i.classList.remove('red-color')
-                    i.classList.add('blue-color')
-                    if(i.className == 'need-fill blue-color'){
-                        i.innerHTML = 'Need to fill'
-                        submitButton.style.backgroundColor = '#543FD3'
-                }
-                }
-            })
-        }
+function indi(indispan, classes) {
+    let a = 0
+    for (item of indispan) {
+        a++
+        indicators.querySelector(`.${classes}`).innerHTML = a
     }
 }
+indi(requiredInput, 'need')
+indi(allInputs, 'all')
+    submitButton.onclick = ()=>{
+        let a = 0
+        let b = 0
+        for (let elem of allInputs) {
+            if (elem.value == ''){
+                a++
+                indicators.querySelector(`.error`).innerHTML = a
+            }else{
+                b++
+                indicators.querySelector(`.success`).innerHTML = b
+            }
+        }
+        for (let item of requiredInput){
+            if (item.value == '') {
+                item.classList.add('red')
+                item.nextElementSibling.classList.add('red-color')
+                item.previousElementSibling.classList.add('red-color')
+                item.nextElementSibling.innerHTML = 'Please enter your email adress'
+                submitButton.style.backgroundColor = '#EE0004'
+            } else if (item.value !== ''){
+                item.classList.remove('red')
+                item.nextElementSibling.classList.remove('red-color')
+                item.previousElementSibling.classList.remove('red-color')
+                item.nextElementSibling.innerHTML = 'Need to fill'
+                submitButton.style.backgroundColor = '#543FD3'
+            }
+        }
+    }
+
+// let form = document.querySelector('form')
+// let input = document.querySelector('input')
+// form.addEventListener('submit', ()=>{
+//     console.log(input.value);
+// })
