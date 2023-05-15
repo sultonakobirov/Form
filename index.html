@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="container">
+    <form class="container">
         <h1>Example form</h1>
         <div class="block">
             <p>All: <span class="all">0</span></p>
@@ -19,63 +19,63 @@
         <div class="input-wrapper">
             <div class="required-box" class=" name-box">
                 <span class="blue-color">Name</span>
-                <input class="required"  type="text">
+                <input class="required"  type="text" name="name">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="required-box" class="age-box">
                 <span class="blue-color">Age</span>
-                <input class="required" type="number">
+                <input class="required" type="number" name="age">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="surname-box">
                 <span>Surname</span>
-                <input type="text">
+                <input type="text" name="surname">
             </div>
             <div class="required-box" class="about-box">
                 <span class="blue-color">About you</span>
-                <input class="required" type="text">
+                <input class="required" type="text" name="aboutYou">
                 <span class="need-fill">Need to fill</span>
                 
             </div>
             <div class="required-box" class="email-box">
                 <span class="blue-color">Email address</span>
-                <input class="required" type="text">
+                <input class="required" type="email" name="email">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="required-box" class="about-js-box">
                 <span class="blue-color">What is JavaScript?</span>
-                <input class="required" type="text">
+                <input class="required" type="text" name="aboutJs">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="phone-box">
                 <span>Phone number</span>
-                <input type="tel">
+                <input type="tel" name="telNumber">
             </div>
             <div class="required-box" class="about-html-box">
                 <span class="blue-color">What is HTML?</span>
-                <input class="required" type="text">
+                <input class="required" type="text" name="aboutHtml">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="mom-name-box">
                 <span>Your Mom’s name</span>
-                <input type="text">
+                <input type="text" name="momName">
             </div>
             <div class="required-box" class="about-css-box">
                 <span class="blue-color">What is CSS?</span>
-                <input class="required" type="text">
+                <input class="required" type="text" name="aboutCss">
                 <span class="need-fill">Need to fill</span>
             </div>
             <div class="pap-name-box">
-                <span>Your Pap’s name</span>
-                <input type="text">
+                <span>Your father's name</span>
+                <input type="text" name="fatherName">
             </div>
                 <div class="about-car-box">
                     <span>Your favourite car</span>
-                    <input type="text">
+                    <input type="text" name="car">
                 </div>
         </div>
         <button type="submit">Save Changes</button>
-    </div>
+    </form>
     <!-- <form action="#">
         <input type="email">
         <input type="tel">
