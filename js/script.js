@@ -32,6 +32,7 @@ form.addEventListener('submit', function (event) {
                 const data = Object.fromEntries(formData.entries());
                 //data = JSON.stringify(data)
                 console.log(data);
+                event.target.reset(); 
 
             }
         }
