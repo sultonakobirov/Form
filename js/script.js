@@ -30,7 +30,9 @@ form.addEventListener('submit', function (event) {
             if (i == 7) {
                 const formData = new FormData(event.target);
                 const data = Object.fromEntries(formData.entries());
+                //data = JSON.stringify(data)
                 console.log(data);
+
             }
         }
         let a = 0
